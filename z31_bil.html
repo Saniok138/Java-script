@@ -4,9 +4,8 @@
 var ciezarowka = {
 firma: 'Volvo Trucks',
 model: 'FH16',
-maksPredkosc: '120',
 pokaz: function ()
-{
+{ 
  document.write(this.firma + ' ' + this.model)
  }
 }
@@ -14,15 +13,15 @@ ciezarowka.pokaz();
 ciezarowka.data=1993;
 ciezarowka.wypisz=function() {alert('Data: ' + this.data + 'lat')}
 ciezarowka.wypisz();
- function okno_zamknij_bilyi()
-{
-window.close()
-}
-</script>
+
+ciezarowka.maksPredkosc='120';
+ciezarowka.ciezarowka_pokaz_bilyi=function() {alert('Maksymalna predkosc: ' + this.maksPredkosc + 'km/g')}
+ciezarowka.ciezarowka_pokaz_bilyi();
+ </script>
  </head>
 <body>
 <br>
- programowanie obiektowe
+  
 <input type="button" value="zamknij okno" onclick="okno_zamknij_bilyi()"/>
 </body>
 </html>
