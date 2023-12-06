@@ -1,32 +1,35 @@
 <html>
  <head>
  <script type="text/javascript">
- function klient(nazwisko_k,imie_k,zawod_k)//początek konstruktora
-{
-this.nazwisko=nazwisko_k;
-this.imie=imie_k;
-this.zawod=zawod_k;
-}//koniec konstruktora
-klient.prototype.wypisz = function () //definicja metody
-{alert(this.nazwisko + ' ' + this.imie+ ' ' + this.zawod);
-};
-var osoba1 = new klient("Kowalski", "Jan", "kierowca"); // nowy obiekt osoba1
-var osoba2 = new klient('Nowak', 'Anna', 'sekretarka');
-osoba1.wypisz(); // uruchomienie metody wypisz() dotyczącej osoby 1
-osoba2.wypisz();
- document.write("dostęp do właściwości"+"<br>");
-// poniżej dostęp do pól osoby1
-document.write("klient pierwszy"+" "+osoba1.nazwisko+" "+osoba1.imie+" "+osoba1.zawod);
-function okno_zamknij_bilyi()
-{
-window.close()
+var ciezarowka = {
+firma: 'Volvo',
+model: 'FH16',
 }
-</script>
-</head>
+ciezarowka.data=1993;
+ciezarowka.wypisz=function() {alert('Data: ' + this.data + 'lat')}
+ciezarowka.wypisz();
+
+ciezarowka.maksPredkosc='120';
+ciezarowka.ciezarowka_pokaz_bilyi=function() {alert('Maksymalna predkosc: ' + this.maksPredkosc + 'km/g')}
+ciezarowka.ciezarowka_pokaz_bilyi();
+
+function klient(firma_k,model_k,data_k)//początek konstruktora
+{
+this.firma=firma_k;
+this.model=model_k;
+this.data=data_k;
+}
+klient.prototype.wypisz = function ()
+{document.write(this.firma + ' ' + this.model+ ' ' + this.data+"<br>");
+};
+var ciezarowka1 = new klient("Volvo", "FH16", "1993");
+var ciezarowka2 = new klient('Tesla', 'Semi', '2022');
+ciezarowka1.wypisz();
+ciezarowka2.wypisz();
+ </script>
+ </head>
 <body>
 <br>
-programowanie obiektowe
 <input type="button" value="zamknij okno" onclick="okno_zamknij_bilyi()"/>
 </body>
 </html>
-  
