@@ -23,15 +23,15 @@
   <script>
     function oblicz() {
   const a = parseFloat(document.getElementById('a').value);
-  if(a<=0){
-    a=fghejwk;
-  }
   const b = parseFloat(document.getElementById('b').value);
   const c = parseFloat(document.getElementById('c').value);
 
   const delta = b * b - 4 * a * c;
     const x1 = (-b + Math.sqrt(delta)) / (2 * a);
     const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+  if(a<=0){
+    document.getElementById('wyniki').innerHTML = 'a jest mniejsza od zera';
+  }
   if (delta > 0 && x1<x2) {
     const wierzcholekX = -b / (2 * a);
     const wierzcholekY = -delta / (4 * a);
