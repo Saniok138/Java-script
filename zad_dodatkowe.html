@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulator równań kwadratowych</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Kalkulator równań kwadratowych</h1>
+  <label for="a">Podaj wartość a>0:</label>
+  <input type="number" id="a" placeholder="Wartość a"><br><br>
+
+  <label for="b">Podaj wartość b:</label>
+  <input type="number" id="b" placeholder="Wartość b"><br><br>
+
+  <label for="c">Podaj wartość c:</label>
+  <input type="number" id="c" placeholder="Wartość c"><br><br>
+
+  <button onclick="oblicz()">Oblicz</button><br><br>
+    <canvas id="wykres" width="400" height="400"></canvas>
+  <div id="wyniki"></div>
+  
+  <script>
+    function oblicz() {
+  const a = parseFloat(document.getElementById('a').value);
+  const b = parseFloat(document.getElementById('b').value);
+  const c = parseFloat(document.getElementById('c').value);
+
+  const delta = b * b - 4 * a * c;
+    const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+    const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+  if (delta > 0 && x1<x2) {
+    const wierzcholekX = -b / (2 * a);
+    const wierzcholekY = -delta / (4 * a);
+
+    document.getElementById('wyniki').innerHTML = `
+      <p>Postać ogólna: ${a}x² + ${b}x + ${c} = 0</p>
+      <p>Postać kanoniczna: ${a}*(x - ${wierzcholekX})² + ${wierzcholekY} = 0</p>
+      <p>Postać iloczynowa: ${a}*(x - ${x1})*(x - ${x2}) = 0</p>
+      <p>Pierwiastki: x₁ = ${x1}, x₂ = ${x2}</p>
+      <p>Wierzchołek: (${wierzcholekX}, ${wierzcholekY})</p>
+      <p>Przedział malejący: (-∞, ${x1}), Przedział rosnący: (${x2}, +∞)</p>
+    `;
+  }else if(delta > 0 && x1>x2){
+    const wierzcholekX = -b / (2 * a);
+    const wierzcholekY = -delta / (4 * a);
+
+    document.getElementById('wyniki').innerHTML = `
+      <p>Postać ogólna: ${a}x² + ${b}x + ${c} = 0</p>
+      <p>Postać kanoniczna: ${a}*(x - ${wierzcholekX})² + ${wierzcholekY} = 0</p>
+      <p>Postać iloczynowa: ${a}*(x - ${x1})*(x - ${x2}) = 0</p>
+      <p>Pierwiastki: x₁ = ${x1}, x₂ = ${x2}</p>
+      <p>Wierzchołek: (${wierzcholekX}, ${wierzcholekY})</p>
+      <p>Przedział malejący: (-∞, ${x2}), Przedział rosnący: (${x1}, +∞)</p>
+    `;    
+  } 
+  else if (delta === 0) {
+    const x = -b / (2 * a);
+    const wierzcholekX = (-b) / (2 * a);
+    const wierzcholekY = -delta / (4 * a);
+
+    document.getElementById('wyniki').innerHTML = `
+      <p>Postać ogólna: ${a}x² + ${b}x + ${c} = 0</p>
+      <p>Postać kanoniczna: ${a}*(x - ${wierzcholekX})² + ${wierzcholekY} = 0</p>
+      <p>Postać iloczynowa: ${a}*(x - ${x})² = 0</p>
+      <p>Pierwiastek podwójny: x = ${x}</p>
+      <p>Wierzchołek: (${wierzcholekX}, ${wierzcholekY})</p>
+      <p>Przedział malejący: (-∞, ${wierzcholekX}), Przedział rosnący: (${wierzcholekX}, +∞)</p>
+    `;
+  } else {
+    document.getElementById('wyniki').innerHTML = `
+    <p>Postać ogólna: ${a}x² + ${b}x + ${c} = 0</p>
+    Delta jest mniejsza od zera, brak rozwiązań w dziedzinie liczb rzeczywistych.
+    `;
+  }
+  drawGraph()
+}
+
+function drawGraph() {
+    const a = parseFloat(document.getElementById('a').value);
+    const b = parseFloat(document.getElementById('b').value);
+    const c = parseFloat(document.getElementById('c').value);
+    var canvas = document.getElementById('wykres');
+    let context = canvas.getContext('2d');
+    
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    
+    drawAxes(context);
+    drawParabola(context, a, b, c);
+  }
+  
+  function drawAxes(context) {
+    context.beginPath();
+    context.moveTo(0, 200);
+    context.lineTo(400, 200);
+    context.stroke();
+  
+    context.beginPath();
+    context.moveTo(200, 0);
+    context.lineTo(200, 400);
+    context.stroke();
+  }
+  
+  function drawParabola(context) {
+    const a = parseFloat(document.getElementById('a').value);
+    const b = parseFloat(document.getElementById('b').value);
+    const c = parseFloat(document.getElementById('c').value);
+    context.beginPath();
+    for (let x = -20; x < 20; x += 0.1) {
+      var y = a * x ** 2 + b * x + c;
+      context.lineTo(200 + 10 * x, 200 - 10 * y);
+    }
+    context.stroke();
+  }
+
+  </script>
+</body>
+</html>
