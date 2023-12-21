@@ -35,11 +35,11 @@
 
     document.getElementById('wyniki').innerHTML = `
       <p>Postać ogólna: ${a}x² + ${b}x + ${c} = 0</p>
-      <p>Postać kanoniczna: ${a}*(x - ${wierzcholekX})² + ${wierzcholekY} = 0</p>
-      <p>Postać iloczynowa: ${a}*(x - ${x1})*(x - ${x2}) = 0</p>
-      <p>Pierwiastki: x₁ = ${x1}, x₂ = ${x2}</p>
-      <p>Wierzchołek: (${wierzcholekX}, ${wierzcholekY})</p>
-      <p>Przedział malejący: (-∞, ${x1}), Przedział rosnący: (${x2}, +∞)</p>
+      <p>Postać kanoniczna: ${a}*(x - ${wierzcholekX.toFixed(2)})² + ${wierzcholekY.toFixed(2)} = 0</p>
+      <p>Postać iloczynowa: ${a}*(x - ${x1.toFixed(2)})*(x - ${x2.toFixed(2)}) = 0</p>
+      <p>Pierwiastki: x₁ = ${x1.toFixed(2)}, x₂ = ${x2.toFixed(2)}</p>
+      <p>Wierzchołek: (${wierzcholekX.toFixed(2)}, ${wierzcholekY.toFixed(2)})</p>
+      <p>Przedział malejący: (-∞, ${x1.toFixed(2)}), Przedział rosnący: (${x2.toFixed(2)}, +∞)</p>
     `;
   }else if(delta > 0 && x1>x2){
     const wierzcholekX = -b / (2 * a);
@@ -47,11 +47,11 @@
 
     document.getElementById('wyniki').innerHTML = `
       <p>Postać ogólna: ${a}x² + ${b}x + ${c} = 0</p>
-      <p>Postać kanoniczna: ${a}*(x - ${wierzcholekX})² + ${wierzcholekY} = 0</p>
-      <p>Postać iloczynowa: ${a}*(x - ${x1})*(x - ${x2}) = 0</p>
-      <p>Pierwiastki: x₁ = ${x1}, x₂ = ${x2}</p>
-      <p>Wierzchołek: (${wierzcholekX}, ${wierzcholekY})</p>
-      <p>Przedział malejący: (-∞, ${x2}), Przedział rosnący: (${x1}, +∞)</p>
+      <p>Postać kanoniczna: ${a}*(x - ${wierzcholekX.toFixed(2)})² + ${wierzcholekY.toFixed(2)} = 0</p>
+      <p>Postać iloczynowa: ${a}*(x - ${x1.toFixed(2)})*(x - ${x2.toFixed(2)}) = 0</p>
+      <p>Pierwiastki: x₁ = ${x1.toFixed(2)}, x₂ = ${x2.toFixed(2)}</p>
+      <p>Wierzchołek: (${wierzcholekX.toFixed(2)}, ${wierzcholekY.toFixed(2)})</p>
+      <p>Przedział malejący: (-∞, ${x2.toFixed(2)}), Przedział rosnący: (${x1.toFixed(2)}, +∞)</p>
     `;    
   } 
   else if (delta === 0) {
@@ -61,11 +61,11 @@
 
     document.getElementById('wyniki').innerHTML = `
       <p>Postać ogólna: ${a}x² + ${b}x + ${c} = 0</p>
-      <p>Postać kanoniczna: ${a}*(x - ${wierzcholekX})² + ${wierzcholekY} = 0</p>
+      <p>Postać kanoniczna: ${a}*(x - ${wierzcholekX.toFixed(2)})² + ${wierzcholekY.toFixed(2)} = 0</p>
       <p>Postać iloczynowa: ${a}*(x - ${x})² = 0</p>
       <p>Pierwiastek podwójny: x = ${x}</p>
       <p>Wierzchołek: (${wierzcholekX}, ${wierzcholekY})</p>
-      <p>Przedział malejący: (-∞, ${wierzcholekX}), Przedział rosnący: (${wierzcholekX}, +∞)</p>
+      <p>Przedział malejący: (-∞, ${wierzcholekX.toFixed(2)}), Przedział rosnący: (${wierzcholekX.toFixed(2)}, +∞)</p>
     `;
   } else {
     document.getElementById('wyniki').innerHTML = `
