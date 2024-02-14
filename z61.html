@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="UTF-8">
+ <title>Tabele zadanie 2</title>
+</head>
+<body>
+ <script>
+ let alarm_bil = prompt("podaj liczbe, do ktorej odczytac","")
+ if(alarm_bil > 0) {
+  let ilo_bil=1;
+  let T_bil = new Array()
+  for (i = 1; i <= alarm_bil; i++) {
+  T_bil[i] = i * 3;
+  ilo_bil=T_bil[i] * ilo_bil;
+  document.write("T["+i+"]="+T_bil[i]+"<br>");
+  }
+  document.write("iloczyn="+ilo_bil+"<br>");
+ }
+ </script>
+</body>
+</html>
