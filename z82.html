@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f0f0;
+            margin: 20px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        main {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+            margin: 0;
+            background: linear-gradient(45deg, #24b8ff, #274cac);
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+
+        h3 {
+            background: #3498db;
+            color: #fff;
+            padding: 10px;
+            margin: 0;
+            border-radius: 10px;
+        }
+
+        p {
+            margin: 10px 0;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+    <title>Zadanie 82: Model DOM</title>
+</head>
+<body>
+
+    <main>
+        <h2>Zadanie 82: Model DOM</h2>
+
+        <h3>1. Co to jest model DOM?</h3>
+        <p><strong>Model DOM (Document Object Model)</strong> to sposób opisu złożonych dokumentów XML i HTML w postaci hierarchii modeli, gdzie niektóre obiekty są nadrzędne nad innymi, a cała strona tworzy drzewo obiektów modelu obiektowego.</p>
+        <p>Mechanizm działania DOM polega na tym, że kod HTML zamieniany jest przez przeglądarkę na stronę WWW, a przeglądarka przechowuje informacje o stronie w postaci modelu obiektowego, który ma hierarchię obiektów. Udostępniane są metody oraz właściwości obiektów.</p>
+
+        <h3>2. Przykład kodu + schemat/drzewo DOM</h3>
+        <p>Przykładowy kod HTML:</p>
+        <pre>
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Obiekty&lt;/title&gt;
+ &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;p&gt;Strona DOM&lt;b&gt;pokaz&lt;/b&gt;&lt;/p&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+        <p>Schemat/Drzewo DOM:</p>
+        <img src="schemat_dom.png" alt="Schemat DOM">
+
+        <h3>Wycinek hierarchii DOM oraz sposób odwołania do obiektu links1</h3>
+        <p>W celu odwołania się do obiektu, należy podać nazwy obiektów w hierarchii oddzielonych kropkami. Na przykład: <code>window.document.link1</code>.</p>
+    </main>
+
+</body>
+</html>

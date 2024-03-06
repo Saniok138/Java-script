@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f0f0;
+            margin: 20px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        main {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+            margin: 0;
+            background: linear-gradient(45deg, #24b8ff, #274cac);
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+
+        h3 {
+            background: #3498db;
+            color: #fff;
+            padding: 8px;
+            margin: 4px;
+            border-radius: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            padding: 0 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+    <title>Zadanie 80: Metody screen, open, close, moveTo, moveBy, resizeTo</title>
+</head>
+<body>
+
+    <main>
+        <h2>Zadanie 80: Metody screen, open, close, moveTo, moveBy, resizeTo</h2>
+<br>
+        <h3>Obiekt screen</h3>
+        <ul>
+            <li><code>window.screen.colorDepth:</code> Odpowiada za głębię kolorów.</li>
+            <li><code>window.screen.width:</code> Szerokość ekranu.</li>
+            <li><code>window.screen.height:</code> Wysokość ekranu.</li>
+            <li><code>window.screen.availWidth:</code> Tylko dostępna szerokość ekranu, czyli odejmuje wszelkie systemowe paski menu.</li>
+            <li><code>window.screen.availHeight:</code> Analogicznie jak powyżej.</li>
+        </ul>
+
+        <h3>Metoda .open()</h3>
+        <ul>
+            <li><code>window.open():</code> Metoda, która pozwala na otworzenie nowego okna. Parametry:</li>
+            <ul>
+                <li><code>URL:</code> Adres strony, która ma zostać załadowana w nowym oknie.</li>
+                <li><code>name:</code> Określa sposób otwarcia nowego okna.</li>
+                <li><code>specs:</code> Lista wartości rozdzielonych przecinkami, dotyczących właściwości okna (rozmiar, wysokość, itp.).</li>
+                <li><code>replace:</code> Określa, czy nowe okno ma dodać nowy wpis do historii przeglądarki czy zastąpić aktualny.</li>
+            </ul>
+        </ul>
+
+        <h3>Metoda .close()</h3>
+        <ul>
+            <li><code>window.close():</code> Służy do zamknięcia aktualnego okna.</li>
+        </ul>
+
+        <h3>Metoda .moveTo(), .moveBy(), .resizeTo()</h3>
+        <ul>
+            <li><code>window.moveTo():</code> Metoda służy do zmiany położenia okna przeglądarki na pulpicie. Przyjmuje parametry określające pozycję w poziomie i pionie.</li>
+            <li><code>window.moveBy():</code> Metoda służy do zmiany położenia okna przeglądarki na pulpicie. Przyjmuje parametry określające pozycję w poziomie i pionie.</li>
+            <li><code>window.resizeTo():</code> Trzecia metoda zmienia rozmiar okna przeglądarki. Przyjmuje nową szerokość i wysokość.</li>
+        </ul>
+
+    </main>
+
+</body>
+</html>

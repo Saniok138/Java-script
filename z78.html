@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        main {
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+            margin: 0;
+            background: linear-gradient(45deg, #24b8ff, #274cac);
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+
+        h3 {
+            background: #3498db;
+            color: #fff;
+            padding: 10px;
+            margin: 2px;
+            border-radius: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        h3, ul {
+            padding: 0 20px;
+        }
+    </style>
+    <title>Teoria: Obiekt history</title>
+</head>
+<body>
+
+    <main>
+        <h2>Teoria: Obiekt history</h2>
+<br>
+        <h3>Zawartość Obiektu history:</h3>
+        <ul>
+            <li><strong>current:</strong> Zawiera bieżący lokalizator URL, czyli adres URL aktualnie wyświetlanej strony w przeglądarce.</li>
+            <li><strong>length:</strong> Przechowuje informację o długości listy historii, czyli ilu różnych stron odwiedził użytkownik w trakcie bieżącej sesji przeglądania.</li>
+        </ul>
+
+        <h3>Właściwości i Metody Obiektu history:</h3>
+        <ul>
+            <li><code>window.history:</code> Odwołuje się do całego obiektu historii przeglądarki, dając dostęp do jego różnych właściwości i metod.</li>
+            <li><code>window.history.length:</code> Pozwala sprawdzić, ile stron użytkownik odwiedził przed aktualnie wyświetlaną, ale ze względów bezpieczeństwa nie pozwala pobrać bezpośrednio adresów tych stron.</li>
+            <li><code>window.history.forward():</code> Działa podobnie do przycisku "w przód" w przeglądarce, przenosząc użytkownika do następnej strony w historii.</li>
+            <li><code>window.history.back():</code> Działa jak przycisk "w tył", cofając użytkownika do poprzedniej strony w historii.</li>
+            <li><code>window.history.go(n):</code> Pozwala na przemieszczanie się o określoną liczbę stron do przodu (jeśli <code>n</code> jest dodatnie) lub do tyłu (jeśli <code>n</code> jest ujemne).</li>
+            <li>Przykłady:
+                <ul>
+                    <li><code>window.history.go(-2);</code> - przeniesie użytkownika o dwie strony wstecz.</li>
+                    <li><code>window.history.go(0);</code> - odświeży aktualną stronę.</li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+
+</body>
+</html>
