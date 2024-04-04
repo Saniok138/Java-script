@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+#container {
+position: relative;
+text-align: center;
+}
+#czas {
+font-size: 60px;
+position: absolute;
+top: 50%;
+left: 33%;
+}
+img{
+height: 100%;
+}
+</style>
+</head>
+<body>
+
+<div id="container">
+<img src="https://img.freepik.com/premium-zdjecie/pusty-kalendarz-3d-ilustracja-kalendarza-3d_118019-6553.jpg?w=740">
+<div id="czas">
+<script> 
+data = new Date();
+let czas = data.toLocaleString('pl-PL', {timeZone: 'Europe/Warsaw'});
+document.write(czas);
+</script>
+</div>
+</div>
+</body>
+</html>

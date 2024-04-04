@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<title>Zadanie JavaScript</title>
+<meta charset="utf-8">
+<style>
+h1 { text-transform: uppercase; }
+div{ border: 1px black solid; width:100px; text-align:center;}
+</style>
+</head>
+<body>
+<input type="button" value="Dzień tygodnia" onclick="start()">
+<div id="wynik" style="margin-top:20px;"></div>
+<script>
+function start()
+{
+ start_b = new Date();
+ tyg=start_b.getDay();
+ var c;
+ switch(tyg){
+ case 1:c = "poniedziałek";break;
+
+ case 2:c = "wtorek";break;
+
+ case 3:c = "środa";break;
+
+ case 4:c = "czwartek";break;
+
+ case 5:c = "piątek";break;
+
+ case 6:c = "sobota";break;
+
+ case 0:c = "niedziela";break;
+
+ default:c="koniec świata";
+
+ }
+document.getElementById("wynik").innerHTML = c;
+}
+</script>
+</body>
+</html>

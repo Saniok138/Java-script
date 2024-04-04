@@ -1,0 +1,23 @@
+<html>
+<head>
+<title> Zadanie 82</title>
+ <script language="JavaScript">
+ function pushbutton() {
+ alert("Czesc !");}
+ </script>
+</head>
+<body>
+Ostatnio zmodyfikowany
+<script language="LiveScript">
+ document.write(document.lastModified,"<br>")
+</script>
+<form>
+ <input type="button" name="Button1" value="Naciśnij mnie" onclick="pushbutton()">
+</form>
+<script language="JavaScript">
+ dzis = new Date()
+ document.write("<br>Aktualny czas : ",dzis.getHours(),":",dzis.getMinutes())
+ document.write("<br>Aktualna data : <b style=\"font-size:1cm;color:red;\">",dzis.getDate(),":</b><b style=\"font-size:1cm;color:green;\">",dzis.getMonth()+1,":</b><b style=\"font-size:1cm;color:blue;\">",dzis.getFullYear());
+</script>
+</body>
+</html>

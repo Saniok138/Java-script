@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<title>Zadanie JavaScript</title>
+<meta charset="utf-8">
+<style>
+h1 { text-transform: uppercase; }
+</style>
+</head>
+<body>
+<label for="a">Podaj dzień:</label> <input type="number" id="a">
+<br><br>
+<label for="b">Podaj miesiąc:</label> <input type="number" id="b">
+<br><br>
+<label for="c">Podaj rok:</label> <input type="number" id="c">
+<br><br>
+<input type="button" value="Oblicz" onclick="suma_bil()">
+<div id="wynik" style="margin-top:20px;"></div>
+<script>
+function suma_bil()
+{
+var a = document.getElementById("a").value;
+var b = document.getElementById("b").value;
+var c = document.getElementById("c").value;
+if (a == "" || b == "" || c == "")
+{
+document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby.";
+} else
+{
+a = parseFloat(a);
+b = parseFloat(b);
+c = parseFloat(c);
+dzis = new Date()
+var d=(dzis.getDate()-a);
+var m=(dzis.getMonth()+1-b)*30;
+var y=(dzis.getFullYear()-c)*365;
+var suma = d + m + y;
+if(suma>=(18*365))
+document.getElementById("wynik").innerHTML = "Ilość dni: " + suma + ", jesteś pełnioletni";
+else
+document.getElementById("wynik").innerHTML = "Ilość dni: " + suma + ", jesteś niepełnioletni";
+}
+//alert(a);
+//console.log(a);
+}
+</script>
+</body>
+</html>

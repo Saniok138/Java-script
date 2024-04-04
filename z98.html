@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<title>Zadanie JavaScript</title>
+<meta charset="utf-8">
+<style>
+h1 { text-transform: uppercase; }
+div{ border: 1px black solid; width:100px; text-align:center;}
+</style>
+</head>
+<body>
+<input type="button" value="Start" onclick="start()">
+<input type="button" value="Koniec" onclick="koniec()">
+<div id="wynik" style="margin-top:20px;"></div>
+<script>
+function start()
+{
+ start_b = new Date();
+ poczatek_b=start_b.getTime()
+}
+function koniec(){
+ stop_b = new Date();
+ koniec_b=stop_b.getTime()
+
+ roznica_b=koniec_b-poczatek_b;
+
+document.getElementById("wynik").innerHTML = roznica_b/1000+" s";
+}
+</script>
+</body>
+</html>
