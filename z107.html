@@ -1,0 +1,83 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  td {
+    padding: 20px;
+    vertical-align: top;
+  }
+  
+  h1 {
+    margin-top: 0;
+  }
+  
+  input{
+    padding: 10px 20px;
+    margin-right: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  input:hover {
+    background-color: #0056b3;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 400px; /* Ustaw odpowiednią wysokość dla iframe */
+    border: none;
+  }
+</style>
+</head>
+<body>
+<script>
+function przod(){
+  history.go(1);
+}
+function wstecz(){
+  history.go(-1);
+}
+function odsw(){
+  location.reload();
+}
+function druk(){
+  window.print();
+}
+</script>
+<table border="1">
+  <tr>
+    <td>
+    <h1>Menu</h1><br>
+    <a href="https://zse.edu.gdansk.pl/" target="Str"><input type="button" value=" ZSE "></a><br><br><br>
+    <a href="https://virtualvacation.us/" target="Str"><input type="button" value=" virtualvacation "></a><br><br><br>
+    <a href="https://digitaldefynd.com/" target="Str"><input type="button" value=" digitaldefynd "></a><br><br><br>
+    </td>
+    <td><iframe name="Str"></iframe></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+    <input type="button" onclick="przod()" value="strona do przodu">
+    <input type="button" onclick="druk()" value="drukuj stronę">
+    <input type="button" onclick="wstecz()" value="wstecz strona">
+    <input type="button" onclick="odsw()" value="odśwież stronę">
+    </td>
+  </tr>
+</table>
+</body>
+</html>
